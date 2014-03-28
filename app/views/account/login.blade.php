@@ -6,10 +6,6 @@ Iniciar sesión
 
 @section('content')
 
-@if(Session::has('error'))
-<div class="error">{{ Session::get('error') }}</div>
-@endif
-
 <form action="{{ route('login') }}"
     method="post">
     {{ Form::token() }}

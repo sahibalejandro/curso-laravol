@@ -13,9 +13,33 @@ Route::get('account/login', array(
     'uses' => 'AccountController@login',
 ));
 
+Route::get('account/logout', array(
+    'as'   => 'logout',
+    'uses' => 'AccountController@logout',
+));
+
 Route::get('account/register', array(
     'as'   => 'register',
     'uses' => 'AccountController@register',
+));
+
+/**
+ * Rutas para productos
+ */
+
+Route::get('products', array(
+    'as'   => 'products',
+    'uses' => 'ProductsController@home',
+));
+
+Route::get('products/detail/{id}', array(
+    'as'   => 'products.detail',
+    'uses' => 'ProductsController@detail',
+));
+
+Route::get('products/add/{id}', array(
+    'as'   => 'products.add',
+    'uses' => 'ProductsController@add',
 ));
 
 /**

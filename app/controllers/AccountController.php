@@ -11,6 +11,12 @@ class AccountController extends BaseController
         return View::make('account.login');
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::home()->with('message', 'Sesión terminada.');
+    }
+
     public function doLogin()
     {
         $auth = Auth::attempt(array(
